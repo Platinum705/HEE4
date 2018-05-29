@@ -6,13 +6,13 @@ robot.on('ready', () => {
     setTimeout(status1, 16000)
     console.log('ready launched bot...')
 });
-
+//команды бота
 robot.on('message', message => {
     if(message.content.startsWith(p + 'help')) {
         const embed = new Discord.RichEmbed()
             .setTitle("Помощь")
             .setColor("#00BFFF")
-            .setDescription('Мои команды:\n ○ h!help-пмощь по командам \n ○ h!say-сказать от имени бота. \n ○ h!inv-Приглосить бота себе на сервер ')
+            .setDescription('Мои команды:\n ○ h!help-пмощь по командам \n ○ h!say-сказать от имени бота. \n ○ h!inv-Приглосить бота себе на сервер \n ○ h!poll-устроить голосование')
             .setFooter("HEE4")
             .setTimestamp();
         message.channel.send({embed}).then(sentMessage => {   
@@ -46,7 +46,7 @@ robot.on('message', message => {
 		const embed = new Discord.RichEmbed()
 			.setColor(16766720)
 			.setDescription(say_poll_embed)
-			.setFooter("голосование | poll")
+			.setFooter("голосование|HEE4")
 			.setTimestamp();
 		message.channel.send({
 			embed
@@ -64,7 +64,9 @@ robot.on('message', message => {
         message.channel.send(say);
     }
 });
+//закончелись команды бота
 
+//сатус
 function status1() {
     robot.user.setActivity(' 🙃+💵=😎', { type: "PLAYING" })
     setTimeout(status2, 16000)
