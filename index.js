@@ -44,7 +44,7 @@ robot.on('message', message => {
 		message.delete().catch(O_o => {});
 		const say_poll_embed = args.join(" ");
 		const embed = new Discord.RichEmbed()
-			.setColor(0, 191, 255)
+			.setColor(`#00BFF`)
 			.setDescription(say_poll_embed)
 			.setFooter("голосование|HEE4")
 			.setTimestamp();
