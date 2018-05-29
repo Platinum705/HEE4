@@ -28,12 +28,12 @@ robot.on('message', message => {
 });
 
 function status1() {
-    robot.user.setActivity('status test', { type: "PLAYING" })
+    robot.user.setActivity('status test 🙃', { type: "PLAYING" })
     setTimeout(status2, 16000)
 }
 
 function status2() {
-    robot.user.setActivity(':)', { type: "PLAYING" })
+    robot.user.setActivity(':) 🤔', { type: "PLAYING" })
     setTimeout(status1, 16000)
 }
 
