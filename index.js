@@ -24,7 +24,7 @@ robot.on('message', message => {
         const embed = new Discord.RichEmbed()
             .setTitle("Ссылка на бота")
             .setColor("#00BFFF")
-            .setDescription('\n Приглоси себе бота на сервер. \n https://discordapp.com/oauth2/authorize?client_id=444545508963385364&scope=bot&permissions=1723325513')
+            .setDescription('\n Приглоси себе бота на сервер. \n\n https://discordapp.com/oauth2/authorize?client_id=444545508963385364&scope=bot&permissions=1723325513')
             .setFooter("HEE4")
             .setTimestamp();
         message.channel.send({embed});
