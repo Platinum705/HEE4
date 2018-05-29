@@ -15,7 +15,13 @@ robot.on('message', message => {
             .setDescription('Мои команды:\n ○ h!help-пмощь по командам \n ○ h!say-сказать от имени бота. \n ○ h!inv-Приглосить бота себе на сервер ')
             .setFooter("HEE4")
             .setTimestamp();
-        message.channel.send({embed});
+        message.channel.send({embed}).then(sentMessage => {   
+            sentMessage.react('🇭')
+                .then(() => sentMessage.react('🇪'))
+                    .then(() => sentMessage.react('🇱'))
+                    .then(() => sentMessage.react('🇵'))
+                    .catch(() => console.error('One of the emojis failed to react.'));
+        });
     }
 });
 
