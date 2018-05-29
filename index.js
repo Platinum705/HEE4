@@ -74,7 +74,7 @@ function status1() {
 
 function status1() {
     robot.user.setActivity('😑+😌=🤦', { type: "PLAYING" })
-    setTimeout(status2, 16000)
+    setTimeout(status3, 16000)
 }
 
 function status1() {
