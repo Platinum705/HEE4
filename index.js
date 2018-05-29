@@ -23,13 +23,31 @@ robot.on('message', message => {
     if(message.content.startsWith(p + `inv`)) {
         const embed = new Discord.RichEmbed()
             .setTitle("Ссылка на бота")
-            .setColor("#00BFFF")
+            .setColor("#00BFF")
             .setDescription('\n Приглоси себе бота на сервер. \n\n https://discordapp.com/oauth2/authorize?client_id=444545508963385364&scope=bot&permissions=1723325513')
             .setFooter("HEE4")
             .setTimestamp();
         message.channel.send({embed});
     }
 });
+
+client.on('message', message => {
+	const args = message.content.slice(prefix.length).trim().split(/ +/g);
+	const command = args.shift().toLowerCase();
+	if(message.content.startsWith(prefix + 'poll')) {
+		message.delete().catch(O_o => {});
+		const say_poll_embed = args.join(" ");
+		const embed = new Discord.RichEmbed()
+			.setColor(16766720)
+			.setDescription(say_poll_embed)
+			.setFooter("голосование | poll")
+			.setTimestamp();
+		message.channel.send({
+			embed
+		}).then(function(message) {
+        }).catch(function() {});
+	}
+}); 
 
 robot.on('message', message => {
     if(message.content.startsWith(p + 'say')) {
