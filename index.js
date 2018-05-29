@@ -1,15 +1,14 @@
 Discord =require('discord.js');
 const robot =new Discord.Client();
+var p = "h!"
 
-robot.login("NDQ0NTQ1NTA4OTYzMzg1MzY0.Ddde2Q.9xIWzgEcisku4OX-keKPvN_5Zng");
-
-let p ="h!";
+robot.on('ready', () => {
+    robot.user.setPresence({ game: { name:'на h!help', type: 3 } }).catch();
+    console.log('ready launched bot...')
+});
 
 robot.on('message', message => {
-
-    robot.user.setPresence({ game: { name:'на h!help', type: 3 } }).catch();
-
-    if(message.content.startsWith(p+ 'help')) {
+    if(message.content.startsWith(p + 'help')) {
         const embed = new Discord.RichEmbed()
             .setTitle("Помощь")
             .setColor("#00BFFF")
@@ -17,6 +16,14 @@ robot.on('message', message => {
             .setFooter("HEE4")
             .setTimestamp();
         message.channel.send({embed});
+    }
+});
 
-        }
-      });
+robot.on('message', message => {
+    if(message.content.startsWith(p + 'say')) {
+        let say = message.content.slice((prefix + 'say').length);
+        message.channel.send(say);
+    }
+});
+
+robot.login(process.env.SECRET);
