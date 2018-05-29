@@ -12,7 +12,7 @@ robot.on('message', message => {
         const embed = new Discord.RichEmbed()
             .setTitle("Помощь")
             .setColor("#00BFFF")
-            .setDescription('Мои команды:\n ○ h!help-пмощь')
+            .setDescription('Мои команды:\n ○ h!help-пмощь по командам \n ○ h!say-сказать от имени бота.')
             .setFooter("HEE4")
             .setTimestamp();
         message.channel.send({embed});
@@ -34,6 +34,11 @@ function status1() {
 
 function status2() {
     robot.user.setActivity(':D 🤔', { type: "PLAYING" })
+    setTimeout(status1, 10000)
+}
+
+function status2() {
+    robot.user.setActivity('h!help', { type: "PLAYING" })
     setTimeout(status1, 10000)
 }
 
