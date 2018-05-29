@@ -22,6 +22,7 @@ robot.on('message', message => {
 robot.on('message', message => {
     if(message.content.startsWith(p + 'say')) {
         let say = message.content.slice((p + 'say').length);
+        message.delete();
         message.channel.send(say);
     }
 });
