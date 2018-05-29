@@ -3,7 +3,7 @@ const robot =new Discord.Client();
 var p = "h!"
 
 robot.on('ready', () => {
-    robot.user.setPresence({ game: { name:'на h!help', type: 3 } }).catch();
+    setTimeout(status1, 16000)
     console.log('ready launched bot...')
 });
 
@@ -26,5 +26,15 @@ robot.on('message', message => {
         message.channel.send(say);
     }
 });
+
+function status1() {
+    robot.user.setActivity('status test', { type: "PLAYING" })
+    setTimeout(status2, 16000)
+}
+
+function status2() {
+    robot.user.setActivity('status test', { type: "PLAYING" })
+    setTimeout(status1, 16000)
+}
 
 robot.login(process.env.SECRET);
