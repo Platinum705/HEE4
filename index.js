@@ -31,10 +31,10 @@ robot.on('message', message => {
     }
 });
 
-client.on('message', message => {
-	const args = message.content.slice(prefix.length).trim().split(/ +/g);
+robot.on('message', message => {
+	const args = message.content.slice(p.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
-	if(message.content.startsWith(prefix + 'poll')) {
+	if(message.content.startsWith(p + 'poll')) {
 		message.delete().catch(O_o => {});
 		const say_poll_embed = args.join(" ");
 		const embed = new Discord.RichEmbed()
