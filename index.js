@@ -45,6 +45,8 @@ robot.on('message', message => {
 		message.channel.send({
 			embed
 		}).then(function(message) {
+            message.react("✅")
+			message.react("❎")
         }).catch(function() {});
 	}
 }); 
