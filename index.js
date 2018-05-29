@@ -29,12 +29,12 @@ robot.on('message', message => {
 
 function status1() {
     robot.user.setActivity(' 🙃+💵=😎', { type: "PLAYING" })
-    setTimeout(status2, 16000)
+    setTimeout(status2, 10000)
 }
 
 function status2() {
     robot.user.setActivity(':D 🤔', { type: "PLAYING" })
-    setTimeout(status1, 16000)
+    setTimeout(status1, 10000)
 }
 
 robot.login(process.env.SECRET);
