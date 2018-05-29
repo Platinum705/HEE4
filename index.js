@@ -72,12 +72,12 @@ function status1() {
     setTimeout(status2, 16000)
 }
 
-function status1() {
+function status2() {
     robot.user.setActivity('😑+😌=🤦', { type: "PLAYING" })
     setTimeout(status3, 16000)
 }
 
-function status1() {
+function status3() {
     robot.user.setActivity('h!help', { type: "PLAYING" })
     setTimeout(status1, 16000)
 }
