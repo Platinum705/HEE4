@@ -33,7 +33,7 @@ function status1() {
 }
 
 function status2() {
-    robot.user.setActivity('status test', { type: "PLAYING" })
+    robot.user.setActivity(':)', { type: "PLAYING" })
     setTimeout(status1, 16000)
 }
 
