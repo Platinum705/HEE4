@@ -67,7 +67,7 @@ robot.on('message', message => {
 //закончелись команды 
 function status3() {
     robot.user.setActivity('h!help', { type: "PLAYING" })
-    setTimeout(status1, 16000)
+    setTimeout(status, 16000)
 }
 
 robot.login(process.env.SECRET);
