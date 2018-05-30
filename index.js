@@ -65,9 +65,10 @@ robot.on('message', message => {
     }
 });
 //закончелись команды 
-robot.on('ready', () => {
-    console.log('Bot loaded');
-    client.user.setPresence({ game: { name: `h!help`, type: 0 } }).catch();
-});
+
+message.content.startswith('h!anime');or.message.content.startswith('!a');or.message.content.startswith('h!а'):
+img_link = random.choice(anime_list)
+msg = ('{0.author.mention}\n '+ img_link).format(message)
+await client.send_message(message.channel, msg)
 
 robot.login(process.env.SECRET);
