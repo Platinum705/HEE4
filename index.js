@@ -64,19 +64,7 @@ robot.on('message', message => {
         message.channel.send(say);
     }
 });
-//закончелись команды бота
-
-//сатус
-function status1() {
-    robot.user.setActivity(' 🙃+💵=😎', { type: "PLAYING" })
-    setTimeout(status2, 16000)
-}
-
-function status2() {
-    robot.user.setActivity('😑+😌=🤦', { type: "PLAYING" })
-    setTimeout(status3, 16000)
-}
-
+//закончелись команды 
 function status3() {
     robot.user.setActivity('h!help', { type: "PLAYING" })
     setTimeout(status1, 16000)
