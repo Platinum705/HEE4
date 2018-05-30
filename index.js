@@ -1,5 +1,6 @@
-Discord =require('discord.js');
-const robot =new Discord.Client();
+const Discord = require('discord.js');
+const request = require('reuqest');
+const robot = new Discord.Client();
 var p = "h!"
 
 robot.on('ready', () => {
@@ -64,11 +65,29 @@ robot.on('message', message => {
         message.channel.send(say);
     }
 });
-//закончелись команды 
 
-message.content.startswith('h!anime');or.message.content.startswith('!a');or.message.content.startswith('h!а');
-img_link = random.choice(anime_list)
-msg = ('{0.author.mention}\n '+ img_link).format(message)
-await.client.send_message(message.channel, msg)
+robot.on('message', message => {
+    let user = message.author;
+    let user1 = message.mentions.users.first();
+    if (!user1 || user1.id === user.id) {
+        user = clientmod.user;
+        user1 = message.author;
+    }
+
+    if(message.content.startsWith(p + 'pat')) {
+        request('https://nekos.life/api/v2/img/pat', function (error, response, body) {
+            try {
+                let arr = JSON.parse(body);
+                let enbed = new Discord.RichEmbed()
+                .setTitle(':3')
+                .setDescription(`${user} погладил ${user1}`)
+                .setImage(arr['url'])
+                .setTimestamp();
+                message.channel.send(`${user1}`, {embed});
+            } catch (e) {console.log(e)}
+            });
+    }
+});
+//закончелись команды 
 
 robot.login(process.env.SECRET);

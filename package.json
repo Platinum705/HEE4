@@ -7,6 +7,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "discord.js": "^11.3.2"
+    "discord.js": "^11.3.2",
+    "reuqest": "2.87.0"
   }
 }
