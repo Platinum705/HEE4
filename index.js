@@ -66,7 +66,7 @@ robot.on('message', message => {
 });
 //закончелись команды 
 
-message.content.startswith('h!anime');or.message.content.startswith('!a');or.message.content.startswith('h!а'):
+message.content.startswith('h!anime');or.message.content.startswith('!a');or.message.content.startswith('h!а');
 img_link = random.choice(anime_list)
 msg = ('{0.author.mention}\n '+ img_link).format(message)
 await client.send_message(message.channel, msg)
