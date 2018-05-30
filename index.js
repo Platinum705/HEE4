@@ -65,6 +65,6 @@ robot.on('message', message => {
     }
 });
 //закончелись команды 
-bot.user.setPresence({ game: { name: p+'h!help', type: 0 } }).catch();
+robot.user.setPresence({ game: { name: p+'h!help', type: 0 } }).catch();
 
 robot.login(process.env.SECRET);
