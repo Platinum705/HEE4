@@ -65,6 +65,9 @@ robot.on('message', message => {
     }
 });
 //закончелись команды 
-robot.user.setPresence({ game: { name: p+'h!help', type: 0 } }).catch();
+robot.on('ready', () => {
+    console.log('Bot loaded');
+    client.user.setPresence({ game: { name: `h!help`, type: 0 } }).catch();
+});
 
 robot.login(process.env.SECRET);
