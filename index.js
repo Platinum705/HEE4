@@ -65,9 +65,6 @@ robot.on('message', message => {
     }
 });
 //закончелись команды 
-function status3() {
-    robot.user.setActivity('h!help', { type: "PLAYING" })
-    setTimeout(status, 16000)
-}
+bot.user.setPresence({ game: { name: p+'h!help', type: 0 } }).catch();
 
 robot.login(process.env.SECRET);
