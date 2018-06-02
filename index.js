@@ -73,20 +73,6 @@ robot.on('message', message => {
         user = clientmod.user;
         user1 = message.author;
     }
-
-    if(message.content.startsWith(p + 'pat')) {
-        request('https://nekos.life/api/v2/img/pat', function (error, response, body) {
-            try {
-                let arr = JSON.parse(body);
-                let enbed = new Discord.RichEmbed()
-                .setTitle(':3')
-                .setDescription(`${user} погладил ${user1}`)
-                .setImage(arr['url'])
-                .setTimestamp();
-                message.channel.send(`${user1}`, {embed});
-            } catch (e) {console.log(e)}
-            });
-    }
 });
 //закончелись команды 
 
