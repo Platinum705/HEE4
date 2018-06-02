@@ -66,14 +66,6 @@ robot.on('message', message => {
     }
 });
 
-robot.on('message', message => {
-    let user = message.author;
-    let user1 = message.mentions.users.first();
-    if (!user1 || user1.id === user.id) {
-        user = clientmod.user;
-        user1 = message.author;
-    }
-});
 //закончелись команды 
 
 robot.login(process.env.SECRET);
