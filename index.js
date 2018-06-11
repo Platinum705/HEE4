@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const request = require('reuqest');
+const request = require('request');
 const robot = new Discord.Client();
 var p = "h!"
 
