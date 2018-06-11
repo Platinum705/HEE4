@@ -4,9 +4,12 @@ const robot = new Discord.Client();
 var p = "h!"
 
 robot.on('ready', () => {
+    robot.user.setActivity('loading..')
+    robot.user.setStatus('dnd')
     setTimeout(status1, 16000)
     console.log('ready launched bot...')
 });
+
 //команды бота
 robot.on('message', message => {
     if(message.content.startsWith(p + 'help')) {
@@ -67,5 +70,10 @@ robot.on('message', message => {
 });
 
 //закончелись команды 
+
+function status1() {
+    robot.user.setActivity('на h!help',{ type: "WATCHING" })
+    robot.user.setStatus('online')
+}
 
 robot.login(process.env.SECRET);
