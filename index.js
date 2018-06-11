@@ -69,6 +69,8 @@ robot.on('message', message => {
     }
 });
 
+/*
+веремнно не работает пока подумаем как исправить
 robot.on('message', message => {
     if(message.content.indexOf(p) !== 0) return;
     const args = message.content.slice(p.length).trim().split(/ +/g);
@@ -137,6 +139,7 @@ robot.on('message', message => {
                 message.channel.send(message.author + ", " + rspCW(userChoice, computerChoice) + ' Ты выбрал\(а\) ' + userChoice + ' Я выбрал ' + computerChoice);
              }};
 });
+*/
 
 //закончелись команды 
 
