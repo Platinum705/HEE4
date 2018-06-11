@@ -48,15 +48,15 @@ robot.on('message', message => {
 			.setColor(`#00FFFF`)
 			.setDescription(say_poll_embed)
 			.setFooter("голосование|HEE4")
-			.setTimestamp();
-		message.channel.send({
-			embed
-		}).then(function(message) {
-            message.react("✅")
-			message.react("❎")
-        }).catch(function() {});
-	}
-}); 
+			.setTimestamp();	
+            message.channel.send({
+                embed
+            }).then(function(message) {
+                message.react("✅")
+                message.react("❎")
+            }).catch(function() {});
+        }
+    }); 
 
 robot.on('message', message => {
     if(message.content.startsWith(p + 'say')) {
