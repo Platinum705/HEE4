@@ -70,8 +70,8 @@ robot.on('message', message => {
 });
 
 robot.on('message', message => {
-    if(message.content.indexOf(prefix) !== 0) return;
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    if(message.content.indexOf(p) !== 0) return;
+    const args = message.content.slice(p.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
     if (['rsp', 'кнб', 'кыз'].includes(command)) {
