@@ -77,7 +77,7 @@ robot.on('message', message => {
             .setDescription('Вошол в AFK,не мешайте ему.')
             .setFooter("AFK|HEE4")
             .setTimestamp();
-            message.author.username({embed});
+            message.reply({embed});
         }
     });
 
