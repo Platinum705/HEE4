@@ -69,6 +69,18 @@ robot.on('message', message => {
     }
 });
 
+robot.on('message', message => {
+    if(message.content.startsWith(p + 'afk on')) {
+        const embed = new Discord.RichEmbed()
+            .setTitle("AFK")
+            .setColor("#00BFFF")
+            .setDescription('Вошол в AFK,не мешайте ему.')
+            .setFooter("AFK|HEE4")
+            .setTimestamp();
+            message.reply({embed});
+        }
+    });
+    
 /*
 веремнно не работает пока подумаем как исправить
 robot.on('message', message => {
