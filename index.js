@@ -77,10 +77,13 @@ robot.on('message', message => {
             .setDescription('Вошол в AFK,не мешайте ему.')
             .setFooter("AFK|HEE4")
             .setTimestamp();
-            message.reply({embed});
-        }
-    });
-
+            message.reply({embed}).then(sentMessage => {
+                sentMessage.react('🔜')    
+                    .catch(() => console.error('One of the emojis failed to react1.'));
+            });
+            }
+});
+ 
     robot.on('message', message => {
         if(message.content.startsWith(p + 'afk off')) {
             const embed = new Discord.RichEmbed()
@@ -89,7 +92,9 @@ robot.on('message', message => {
                 .setDescription('Вышел из AFK,теперь он с нам.')
                 .setFooter("AFK|HEE4")
                 .setTimestamp();
-                message.reply({embed});
+                message.reply({embed}).then(sentMessage => {
+                    sentMessage.react('🔙')
+                });     
             }
         });
     
