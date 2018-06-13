@@ -73,7 +73,7 @@ robot.on('message', message => {
         const embed = new Discord.RichEmbed()
             .setTitle("AFK")
             .setColor("#00BFFF")
-            .setDescription('Вошол в AFK,не мешайте ему.')
+            .setDescription('Вошол в AFK,не мешайте.')
             .setFooter("AFK|HEE4")
             .setTimestamp();
             message.reply({embed}).then(sentMessage => {
@@ -88,7 +88,7 @@ robot.on('message', message => {
             const embed = new Discord.RichEmbed()
                 .setTitle("AFK")
                 .setColor("#00BFFF")
-                .setDescription('Вышел из AFK,теперь он с нам.')
+                .setDescription('Вышел из AFK,теперь он(а) с нами.')
                 .setFooter("AFK|HEE4")
                 .setTimestamp();
                 message.reply({embed}).then(sentMessage => {
