@@ -16,7 +16,7 @@ robot.on('message', message => {
         const embed = new Discord.RichEmbed()
             .setTitle("Помощь")
             .setColor("#00BFFF")
-            .setDescription('Мои команды:\n ○ h!help-пмощь по командам. \n ○ h!say-сказать от имени бота. \n ○ h!inv-Приглосить бота себе на сервер. \n ○ h!poll-устроить голосование.')
+            .setDescription('Мои команды:\n ○ h!help-пмощь по командам. \n ○ h!say-сказать от имени бота. \n ○ h!inv-Приглосить бота себе на сервер. \n ○ h!poll-устроить голосование. \n ○ h!afk on-войти в AFK. \n ○ h!afk off-выйти из AFK.')
             .setFooter("HEE4")
             .setTimestamp();
         message.channel.send({embed}).then(sentMessage => {   
@@ -77,9 +77,21 @@ robot.on('message', message => {
             .setDescription('Вошол в AFK,не мешайте ему.')
             .setFooter("AFK|HEE4")
             .setTimestamp();
-            message.reply({embed});
+            message.author.username({embed});
         }
     });
+
+    robot.on('message', message => {
+        if(message.content.startsWith(p + 'afk off')) {
+            const embed = new Discord.RichEmbed()
+                .setTitle("AFK")
+                .setColor("#00BFFF")
+                .setDescription('Вышел из AFK,теперь он с нам.')
+                .setFooter("AFK|HEE4")
+                .setTimestamp();
+                message.author.username({embed});
+            }
+        });
     
 /*
 веремнно не работает пока подумаем как исправить
