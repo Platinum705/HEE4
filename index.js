@@ -88,7 +88,7 @@ robot.on('message', message => {
             const embed = new Discord.RichEmbed()
                 .setTitle("AFK")
                 .setColor("#00BFFF")
-                .setDescription('Вышел(а) из AFK,теперь он(а) с нами.')
+                .setDescription('Выш(е)л(а) из AFK,теперь он(а) с нами.')
                 .setFooter("AFK|HEE4")
                 .setTimestamp();
                 message.reply({embed}).then(sentMessage => {
