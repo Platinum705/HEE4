@@ -89,7 +89,7 @@ robot.on('message', message => {
                 .setDescription('Вышел из AFK,теперь он с нам.')
                 .setFooter("AFK|HEE4")
                 .setTimestamp();
-                message.author.username({embed});
+                message.reply({embed});
             }
         });
     
