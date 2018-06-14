@@ -96,19 +96,6 @@ robot.on('message', message => {
                 });     
             }
         });
-    
-        if(message.content.startsWith(p + 'avatar')) {
-            let user = message.mentions.members.first();
-            if (!user) user = message.member;
-            let av = new Discord.RichEmbed()
-                .setImage(user.user.avatarURL)
-                .setDescription("**Аватар пользователя **" + user + "\n" + "Представлено по запросу " + message.author)
-                .setColor("#00BFFF")
-                .setFooter("HEE4")
-                .setTimestamp();
-            message.channel.send({embed: av}); 
-            message.delete();
-        }
 
 /*
 веремнно не работает пока подумаем как исправить
