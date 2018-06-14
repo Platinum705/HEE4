@@ -97,7 +97,7 @@ robot.on('message', message => {
             }
         });
     
-        if([ p + 'avatar'].includes(command)) {
+        if(message.content.startsWith(p + 'avatar')) {
             let user = message.mentions.members.first();
             if (!user) user = message.member;
             let av = new Discord.RichEmbed()
