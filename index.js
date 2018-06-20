@@ -96,7 +96,7 @@ robot.on('message', message => {
                 });     
             }
         });
-
+/*
         if(['sms'].includes(command)) {
             let user = message.mentions.members.first();
             const sendMessage = args.join(" ");
@@ -104,83 +104,14 @@ robot.on('message', message => {
             })
             message.delete().catch(O_o=>{});
             }        
-
-/*
-веремнно не работает пока подумаем как исправить
-robot.on('message', message => {
-    if(message.content.indexOf(p) !== 0) return;
-    const args = message.content.slice(p.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
-
-    if (['rsp', 'кнб', 'кыз'].includes(command)) {
-        let userChoice;
-                if (['камень', 'rock', 'r', 'к'].includes(args[0].toLowerCase())) {
-                    userChoice = 'камень';
-                }
-                else if (['бумагу', 'бумага', 'paper', 'p', 'б'].includes(args[0].toLowerCase())) {
-                    userChoice = 'бумагу';
-                }
-                else if (['scissors', 'ножницы', 's', 'н'].includes(args[0].toLowerCase())) {
-                    userChoice = 'ножницы';
-                }
-                else if (!args[0]) {
-                    message.channel.send('Вы забыли указать что вы выбираете, камень, ножницы или бумагу');
-                    return;
-                }
-                else {
-                    userChoice = 'Incorrect';
-                }
-                let computerChoice = Math.random();
-                if (computerChoice < 0.34) {
-                    computerChoice = "камень";
-                } else if(computerChoice <= 0.67) {
-                    computerChoice = "бумагу";
-                } else {
-                    computerChoice = "ножницы";
-                } message.channel.send("Я выбрал " + computerChoice);
-                function rspCW(userChoice, computerChoice) {
-                    if (userChoice === computerChoice) {
-                        return "ничья!";
-                    }
-                    else if(userChoice === "камень") {
-                        if(computerChoice === "ножницы") {
-                            return "ты выиграл!";
-                        }
-                        else if (computerChoice === "бумагу") {
-                            return "ты проиграл";
-                        }
-                    }
-                    else if(userChoice === "бумагу") {
-                        if(computerChoice === "камень") {
-                            return "ты выиграл!";
-                        } else if (computerChoice === "ножницы") {
-                            return "ты проиграл";
-                        }
-                    }
-                    else if(userChoice === "ножницы") {
-                        if(computerChoice === "бумагу") {
-                            return "ты выиграл!";
-                        } else if (computerChoice === "камень") {
-                            return "ты проиграл.";
-                        }
-                    }
-                    else if (userChoice === 'Incorrect') {
-                        return "ты не выбрал ни камень, ни ножницы, ни бумагу";
-                    }
-                }
-                if (userChoice === 'Incorrect') {
-                    message.channel.send(message.author + ", " + rspCW(userChoice, computerChoice))
-                }
-                else {
-                message.channel.send(message.author + ", " + rspCW(userChoice, computerChoice) + ' Ты выбрал\(а\) ' + userChoice + ' Я выбрал ' + computerChoice);
-             }};
-});
-*/
+/**
+ * 
+ */
 
 //закончелись команды 
 
 function status1() {
-    robot.user.setActivity('на h!help',{ type: "WATCHING" })
+    robot.user.setActivity('h!help',{ type: "WATCHING" })
     robot.user.setStatus('online')
 }
 
