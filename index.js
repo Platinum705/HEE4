@@ -97,6 +97,14 @@ robot.on('message', message => {
             }
         });
 
+        if(['sms'].includes(command)) {
+            let user = message.mentions.members.first();
+            const sendMessage = args.join(" ");
+            let msg = user.send('Вам пришло смс от' + message.author + '. Он сказал: ' + sendMessage).catch(()=>{message.reply('Ошибка');
+            })
+            message.delete().catch(O_o=>{});
+            }        
+
 /*
 веремнно не работает пока подумаем как исправить
 robot.on('message', message => {
